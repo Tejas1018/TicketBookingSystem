@@ -2,9 +2,7 @@ package com.seatInventory.SeatInventory.entity;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -13,6 +11,9 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
+@Getter
+@Builder
 public class SeatInventory {
 
     @Id
@@ -21,7 +22,7 @@ public class SeatInventory {
 
     private String theaterId;
     private String showId;
-    private String seatNo;
+    private String seatNumber;
     private String screenNo;
     private SeatStatus seatStatus;
     private String currentBookingId;

@@ -11,10 +11,9 @@ import static com.commonUtilities.CommonUtilities.commons.kafkaConfigProperties.
 
 @Component
 @Slf4j
-
 public class SeatInventoryListner {
     private final SeatInventoryService seatInventoryService;
-    public SeatInventoryListner(SeatInventoryService seatInventoryService) {
+    public  SeatInventoryListner(SeatInventoryService seatInventoryService) {
         this.seatInventoryService = seatInventoryService;
     }
 
