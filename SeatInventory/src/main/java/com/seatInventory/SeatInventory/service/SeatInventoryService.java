@@ -27,7 +27,7 @@ public class SeatInventoryService {
         log.info("Processing Booking created event for bookingId{}",event.bookingId());
 
         //Fetch All Seats for booking
-        List<SeatInventory> seats = seatInventoryRepository.findByShowIdAndSeatNumbersIn(event.bookingId(),event.seatIds());
+        List<SeatInventory> seats = seatInventoryRepository.findByShowIdAndSeatNumberIn(event.bookingId(),event.seatIds());
 
         // check if all seats which need to be booked are available or not.
         boolean isAllSeatsAvailable = seats.stream().allMatch(s->s.getSeatStatus()== SeatStatus.AVALIABLE);

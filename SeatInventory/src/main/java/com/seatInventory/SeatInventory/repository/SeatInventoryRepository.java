@@ -10,5 +10,5 @@ import java.util.List;
 
 public interface SeatInventoryRepository extends JpaRepository<SeatInventory, Long> {
 
-    List<SeatInventory> findByShowIdAndSeatNumbersIn(String showId, List<String> seatNumbers);
+    List<SeatInventory> findByShowIdAndSeatNumberIn(String showId, List<String> seatNumber);
 }
