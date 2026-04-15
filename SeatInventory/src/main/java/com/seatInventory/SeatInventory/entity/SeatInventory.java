@@ -16,16 +16,21 @@ import java.util.List;
 @Builder
 public class SeatInventory {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
+    private Long id;
+    @Column(name = "theater_id")
     private String theaterId;
     private String showId;
     private String seatNumber;
-    private String screenNo;
-    private SeatStatus seatStatus;
-    private String currentBookingId;
+    private String screenId;
+
+    @Enumerated(EnumType.STRING)
+    private SeatStatus status; // AVAILABLE, LOCKED, RESERVED
+
+    private String currentBookingId; // if seat is locked/reserved for booking
+
     private LocalDateTime lastUpdated;
 
     @PrePersist

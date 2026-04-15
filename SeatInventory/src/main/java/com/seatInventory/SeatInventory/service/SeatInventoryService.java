@@ -30,11 +30,11 @@ public class SeatInventoryService {
         List<SeatInventory> seats = seatInventoryRepository.findByShowIdAndSeatNumberIn(event.bookingId(),event.seatIds());
 
         // check if all seats which need to be booked are available or not.
-        boolean isAllSeatsAvailable = seats.stream().allMatch(s->s.getSeatStatus()== SeatStatus.AVALIABLE);
+        boolean isAllSeatsAvailable = seats.stream().allMatch(s->s.getStatus()== SeatStatus.AVALIABLE);
         // If Available Set Lock and bookingId
         if(isAllSeatsAvailable) {
             seats.forEach(seat -> {
-                seat.setSeatStatus(SeatStatus.LOCKED);
+                seat.setStatus(SeatStatus.LOCKED);
                 seat.setCurrentBookingId(event.bookingId());
             });
             // Persist all the seats to repository

@@ -1,10 +1,7 @@
 package com.bookingService.BookingService.entity;
 
 
-import jakarta.persistence.Access;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,7 +16,8 @@ import java.util.UUID;
 @Table(name="Booking")
 public class Booking {
     @Id
-    private String bookingId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String booking_id;
     private String showId;
     private long amount;
     private SeatStatus status;

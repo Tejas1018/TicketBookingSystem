@@ -6,6 +6,6 @@ import com.commonUtilities.CommonUtilities.responses.BookingResponse;
 public class EntityToBookingResponseMapper {
 
     public static BookingResponse map(Booking booking) {
-        return new BookingResponse(booking.getBookingId(), "reserved");
+        return new BookingResponse(booking.getBooking_id(), "reserved");
     }
 }
