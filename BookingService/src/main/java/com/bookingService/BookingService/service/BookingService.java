@@ -24,7 +24,7 @@ public class BookingService {
     }
 
     public BookingResponse bookSeats(BookingRequest request) {
-        log.info("Booking seats from user{} for show {}",request.userId(),request.showId());
+        log.info("Booking seats from user{} for show {} ",request.userId(),request.showId());
 
         // Mapping the request to entity
         var bookingRequestEntity = BookingRequestToEntityMapper.map(request);
@@ -42,6 +42,6 @@ public class BookingService {
     }
 
     private BookingCreatedEvent buildBookingCreatedEvent(Booking savedReservation) {
-        return new BookingCreatedEvent(savedReservation.getBookingId(),savedReservation.getShowId(),savedReservation.getUserId(),savedReservation.getSeatIds(),savedReservation.getAmount());
+        return new BookingCreatedEvent(savedReservation.getBooking_id(),savedReservation.getShowId(),savedReservation.getUserId(),savedReservation.getSeatIds(),savedReservation.getAmount());
     }
 }

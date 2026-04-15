@@ -12,7 +12,7 @@ public class BookingRequestToEntityMapper {
     public static Booking map(BookingRequest bookingRequest) {
         var reservationId = UUID.randomUUID().toString().split("-")[0];
         Booking booking = new Booking();
-        booking.setBookingId(booking.getBookingId());
+        booking.setBooking_id(booking.getBooking_id());
         booking.setShowId(booking.getShowId());
         booking.setUserId(booking.getUserId());
         booking.setSeatIds(booking.getSeatIds());
